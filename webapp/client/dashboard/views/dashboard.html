@@ -39,7 +39,7 @@
 
 <template name="orderInfo">
 	<h2>Order Info</h2>
-	
+
 	<h3>Main Meals</h3>
 	<ul>
 		{{#each mainMeals}}
@@ -50,16 +50,21 @@
 	<h3>Sides and Drinks</h3>
 	<ul>
 		{{#each sides}}
-			<li>{{name}}</li>
+			<li>
+				{{#if size}}
+					{{size}}
+				{{/if}}
+				{{name}}
+			</li>
 		{{/each}}
 	</ul>
 
 	<div class="row">
 		<div class="col-sm-5">
-			<button type="button" class="btn btn-danger btn-lg" style="width: 100%">Cancel</button>
+			<button id="cancel-button" type="button" class="btn btn-danger btn-lg" style="width: 100%">Cancel</button>
 		</div>
 		<div class="col-sm-7">
-			<button type="button" class="btn btn-success btn-lg" style="width: 100%">Done</button>
+			<button id="done-button" type="button" class="btn btn-success btn-lg" style="width: 100%">Done</button>
 		</div>
 	</div>
 </template>

@@ -36,3 +36,12 @@ Template.orderInfo.helpers({
 		return Meals.find({_id: {$in: meals}, isMainMeal: false});
 	}
 })
+
+Template.orderInfo.events({
+	'click #cancel-button': function(e) {
+		Meteor.call("orderCancelled", Session.get("selectedOrderId"));
+	},
+	'click #done-button': function(e) {
+		Meteor.call("orderDone", Session.get("selectedOrderId"));
+	}
+})

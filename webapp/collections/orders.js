@@ -12,3 +12,24 @@ Orders.allow({
     return true;
   }
 });
+
+Meteor.methods({
+	orderDone: function(orderId) {
+		function notifyCustomer(customerId) {
+			var customer = Customers.findOne(customerId);
+			//TODO: Send SMS
+		}
+
+		var order = Orders.update(orderId, {$set: {status: "complete"}});
+		notifyCustomer(order.customerId);
+	},
+	orderCancelled: function(orderId) {
+		function notifyCustomer(customerId) {
+			var customer = Customers.findOne(customerId);
+			//TODO: Send SMS
+		}
+
+		var order = Orders.update(Session.get("selectedOrderId"), {$set: {status: "cancelled"}});
+		notifyCustomer(order.customerId);
+	}
+});
