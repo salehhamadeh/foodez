@@ -1,7 +1,7 @@
 Customers = new Meteor.Collection("customers");
 
 //Allow anything in the database to be modified without a Meteor.call
-Meals.allow({
+Customers.allow({
   insert: function () {
       return true;
   },
