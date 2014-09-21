@@ -1,0 +1,24 @@
+<template name="orderapp">
+	<div id="orderapp" class="container">
+		<input id="customer-name" type="text" class="form-control" placeholder="Name">
+		<input id="customer-phone" type="tel" class="form-control" placeholder="Phone number">
+		<table>
+		{{#each meals}}
+			{{> mealOnMenu}}
+		{{/each}}
+		</table>
+
+		<h2 class="text-center subtotal">Subtotal: <span class="subtotal-value"></span></h2>
+		<button id="order-button" type="button" class="btn btn-warning btn-lg" style="width: 100%">Place Order</button>
+	</div>
+</template>
+
+<template name="mealOnMenu">
+	<tr class="mealItem" data-id="{{_id}}">
+		<td class="mealName">{{name}}</td>
+		<td class="price">(${{cost}})</td>
+		<td class="mealQuantity">
+			<input type="number" class="form-control quantity">
+		</td>
+	</tr>
+</template>

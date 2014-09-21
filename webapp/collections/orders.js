@@ -1,5 +1,7 @@
 Orders = new Meteor.Collection("orders");
 
+var nextOrderNumber = 100;
+
 //Allow anything in the database to be modified without a Meteor.call
 Orders.allow({
   insert: function () {
@@ -54,6 +56,17 @@ if (Meteor.isServer) {
 				  	}
 			    });
 			}
+		},
+		placeOrder: function(customerId, meals) {
+			var order = {
+				orderNumber: nextOrderNumber++,
+				status: "incomplete",
+				timeCreated: Date.now(),
+				customerId: customerId,
+				meals: meals
+			};
+
+			Orders.insert(order);
 		}
 	});
 }

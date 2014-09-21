@@ -1,0 +1,48 @@
+#orderapp {
+	font-size: 32pt;
+}
+
+#orderapp {
+	width: 95%;
+}
+
+#orderapp h2 {
+	font-size: 36pt;
+	font-weight: bold;
+}
+
+#orderapp .subtotal {
+	color: red;
+	padding-top: 20px;
+}
+
+#orderapp input {
+	margin-top: 1em;
+	min-height: 2em;
+	font-size: 30pt;
+}
+
+#orderapp > input {
+	min-height: 3em;
+}
+
+#orderapp .mealName {
+	padding-top: 0.9em;
+	width: 7.5em;
+}
+
+#orderapp .mealQuantity {
+	min-width: 3em;
+	padding-left: 8em;
+}
+
+#orderapp .mealItem .price {
+	font-size: 30pt;
+	padding-top: 0.9em;
+}
+
+#orderapp #order-button {
+	height: 3em;
+	font-size: 40pt;
+	margin-top: 1em;
+}
