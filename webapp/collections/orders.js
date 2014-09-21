@@ -67,6 +67,8 @@ if (Meteor.isServer) {
 			};
 
 			Orders.insert(order);
+
+			return order;
 		}
 	});
 }

@@ -46,3 +46,12 @@
 	font-size: 40pt;
 	margin-top: 1em;
 }
+
+#thankYouModal {
+	font-size: 20pt;
+}
+
+#thankYouModal button {
+	width: 100%;
+	font-size: 20pt;
+}

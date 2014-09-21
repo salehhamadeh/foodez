@@ -11,6 +11,9 @@
 		<h2 class="text-center subtotal">Subtotal: <span class="subtotal-value"></span></h2>
 		<button id="order-button" type="button" class="btn btn-warning btn-lg" style="width: 100%">Place Order</button>
 	</div>
+
+	{{> thankYouForOrderModal}}
+	{{> paymentModal}}
 </template>
 
 <template name="mealOnMenu">
@@ -21,4 +24,46 @@
 			<input type="number" class="form-control quantity">
 		</td>
 	</tr>
+</template>
+
+<template name="thankYouForOrderModal">
+	<!-- Modal -->
+	<div class="modal fade" id="thankYouModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h1 class="modal-title">Your order number is <span id="order-number"></span></h1>
+	      </div>
+	      <div class="modal-body">
+	      	Thank you for your order. We will text you when your order is ready for pickup.
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</template>
+
+<template name="paymentModal">
+	<!-- Modal -->
+	<div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h1 class="modal-title">The total price is <span class="total-price"></span></h1>
+	      </div>
+	      <div class="modal-body">
+	      	<p>How would you like to pay?</p>
+	      	<p>Using paypal: <div id="paypal-button"></div></p>
+	      	<button id="order-free" type="button" class="btn btn-primary" data-dismiss="modal">Order for Free (Demo)</button>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 </template>
